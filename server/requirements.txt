@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+chromadb
+sentence-transformers
+httpx
+pydantic
+beautifulsoup4
+requests
+python-dotenv
+huggingface_hub
+openai
+tokenizers
+torch

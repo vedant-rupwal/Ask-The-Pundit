@@ -1,0 +1,16 @@
+{
+  "train_corpus": "slm/data/processed/clean_corpus.jsonl",
+  "tokenizer": "slm/models/tokenizer.json",
+  "checkpoint_out": "slm/models/tiny_smoke.pt",
+  "max_steps": 20,
+  "batch_size": 2,
+  "block_size": 128,
+  "learning_rate": 0.0005,
+  "model": {
+    "vocab_size": 8000,
+    "n_layer": 2,
+    "n_head": 2,
+    "n_embd": 128,
+    "dropout": 0.1
+  }
+}

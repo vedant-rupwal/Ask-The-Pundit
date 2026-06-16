@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ask the Pandit Options</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(180deg, #fffaf0 0%, #fffdf9 100%);
+        color: #1f2937;
+      }
+
+      .page {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 48px 20px;
+      }
+
+      .card {
+        background: #ffffff;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 20px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+        padding: 28px;
+      }
+
+      .card + .card {
+        margin-top: 22px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 28px;
+      }
+
+      p {
+        margin: 0 0 24px;
+        line-height: 1.5;
+        color: #4b5563;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px;
+        border: 1px solid rgba(15, 23, 42, 0.12);
+        border-radius: 14px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: rgba(249, 115, 22, 0.7);
+        box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.14);
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 14px;
+        padding: 12px 18px;
+        background: #f97316;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #ea580c;
+      }
+
+      .status {
+        min-height: 20px;
+        font-size: 14px;
+        color: #166534;
+      }
+
+      .hint {
+        margin-top: 12px;
+        font-size: 13px;
+        color: #6b7280;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      .developer-copy {
+        margin-bottom: 18px;
+      }
+
+      .log-block + .log-block {
+        margin-top: 18px;
+      }
+
+      .log-title {
+        margin-bottom: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #374151;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      pre {
+        margin: 0;
+        padding: 14px;
+        overflow-x: auto;
+        border-radius: 16px;
+        background: #fff7ed;
+        border: 1px solid rgba(249, 115, 22, 0.12);
+        color: #7c2d12;
+        font-size: 13px;
+        line-height: 1.45;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Ask the Pandit</h1>
+        <p>Set the backend server URL the extension should use for answering questions.</p>
+
+        <form id="optionsForm">
+          <label for="serverUrl">Server URL</label>
+          <input
+            id="serverUrl"
+            name="serverUrl"
+            type="url"
+            placeholder="https://vedantrupwal-ask-the-pandit.hf.space"
+            required
+          />
+
+          <div class="actions">
+            <button type="submit">Save</button>
+            <div class="status" id="status"></div>
+          </div>
+        </form>
+
+        <div class="hint">Default: <code>https://vedantrupwal-ask-the-pandit.hf.space</code></div>
+      </section>
+
+      <section class="card">
+        <h2>Developer Info</h2>
+        <p class="developer-copy">
+          This shows the most recent hybrid query, retrieved scripture, and final prompt sent to the active model provider.
+        </p>
+
+        <div class="log-block">
+          <div class="log-title">Hybrid Query</div>
+          <pre id="hybridQueryLog">Loading...</pre>
+        </div>
+
+        <div class="log-block">
+          <div class="log-title">Retrieved Scripture</div>
+          <pre id="chromaResultsLog">Loading...</pre>
+        </div>
+
+        <div class="log-block">
+          <div class="log-title">Final System Prompt</div>
+          <pre id="systemPromptLog">Loading...</pre>
+        </div>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

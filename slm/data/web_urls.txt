@@ -1,0 +1,7 @@
+# Add approved source URLs here, one per line.
+# Each URL is a same-domain crawl seed for slm/scripts/crawl_mixed_media.py.
+https://vanipedia.org/wiki/Main_Page
+https://vaniquotes.org/wiki/Main_Page
+https://vanisource.org/wiki/Main_Page
+https://vanimedia.org/wiki/Main_Page
+https://vedabase.io/en/

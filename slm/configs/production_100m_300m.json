@@ -1,0 +1,19 @@
+{
+  "status": "template_only_requires_gpu_compute",
+  "train_corpus": "slm/data/processed/clean_corpus.jsonl",
+  "tokenizer": "slm/models/tokenizer.json",
+  "checkpoint_out": "slm/models/pandit_slm.pt",
+  "target_parameter_range": "100M-300M",
+  "model": {
+    "n_layer": 18,
+    "n_head": 12,
+    "n_embd": 768,
+    "block_size": 1024,
+    "dropout": 0.1
+  },
+  "notes": [
+    "Do not run this on CPU.",
+    "Choose GPU hardware before filling batch size, gradient accumulation, and total tokens.",
+    "Run tiny_smoke.json first to validate the pipeline."
+  ]
+}
